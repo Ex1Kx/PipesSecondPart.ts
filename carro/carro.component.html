@@ -1,0 +1,41 @@
+<form #formCarro = "ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Placa</label>
+        <input type="text" name="placa" #placa = "ngModel" [(ngModel)]=carro.placa
+        class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Ingrese Placa">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Marca</label>
+        <input type="text" name="marca" #marca = "ngModel" [(ngModel)]=carro.marca
+        class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Ingrese Marca">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Color</label>
+        <input type="text" name="color" #color = "ngModel" [(ngModel)]=carro.color
+        class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Ingrese Color">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Enviar Datos</button>
+    </div>
+</form>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Placa</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Color</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let valor of carros; let i = index">
+            <td>{{i}}</td>
+            <td>{{valor.placa}}</td>
+            <td>{{valor.marca}}</td>
+            <td>{{valor.color}}</td>
+        </tr>
+    </tbody>
+</table>
